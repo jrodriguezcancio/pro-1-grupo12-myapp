@@ -18,8 +18,6 @@ fetch(URL)
         let nombre = (lista[i].name);
         let imagen = (lista[i].image);
         let dificultad = (lista[i].difficulty)
-        let ingredientes = (lista[i].ingredients)
-        let instrucciones = (lista[i].instructions)
         
         
         recetasplus += `
@@ -27,7 +25,7 @@ fetch(URL)
                 <p class= "titulo ">${nombre} </p>
                 <img src="${imagen}" alt="${nombre}" class="imagen">
                 <p class= "nivel" >${dificultad} </p>
-                <a href="./receta.html" class="masINFO" ><p>Más información de la receta</p></a>
+                <a href="./receta.html" class="masINFO" ><p>More information about de recipe</p></a>
             </article>
         `}
    
@@ -69,7 +67,7 @@ fetch(URL)
         imagen.style.border = 
         imagen.style.width = "250px"
         imagen.style.height = "250px"
-        imagen.style.margin = "20px"
+        imagen.style.margin = "20px 40px 20px 40px"
         imagen.style.borderRadius = "20px"
         imagen.style.border = "1px solid black"
         imagen.style.filter ="drop-shadow(2px 2px 4px rgb(0, 0, 0))"
@@ -83,7 +81,7 @@ fetch(URL)
         articulo.style.flexDirection = "column"
         articulo.style.flexWrap = "nowrap"
         articulo.style.alignItems = "center"
-        articulo.style.margin = "30px 15px 10px 15px"
+        articulo.style.margin = "30px 40px 10px 40px"
         articulo.style.borderRadius = "20px"
         articulo.style.backgroundColor = "#fbfbed"
     }
@@ -101,3 +99,10 @@ recetas.style.alignContent = "center"
 recetas.style.justifyContent = "center"
 recetas.style.margin = "0px"
 
+
+// FORMULARIO - BUSCADOR 
+
+let qs = loaction.search;
+let qsObj = new URLSearchParams(qs)
+
+qsObj.get('buscador');
