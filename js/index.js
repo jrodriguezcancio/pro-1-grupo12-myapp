@@ -1,3 +1,17 @@
+/* probando subit para el buscador (no funciona todavia)
+let buscador = document.querySelector(".formu");
+
+
+buscador.addEventListener('submit', function(event) {
+    let busqueda = buscador.value;
+    event.preventDefault(); // Evita que el formulario se envíe
+    if (busqueda.length > 0 && busqueda.length < 3){
+        alert("busque algo de mínimo 3 caracteres");
+    } else if (busqueda === ""){
+        alert("no deje el campo vacío");
+    }
+}); */
+
 
 let recetas = document.querySelector(".fotorecetas");
 const URL = "https://dummyjson.com/recipes";
@@ -18,6 +32,7 @@ fetch(URL)
         let nombre = (lista[i].name);
         let imagen = (lista[i].image);
         let dificultad = (lista[i].difficulty)
+        let id = (lista[i].id)
         
         
         recetasplus += `
@@ -25,7 +40,7 @@ fetch(URL)
                 <p class= "titulo ">${nombre} </p>
                 <img src="${imagen}" alt="${nombre}" class="imagen">
                 <p class= "nivel" >${dificultad} </p>
-                <a href="./receta.html" class="masINFO" ><p>More information about de recipe</p></a>
+                <a href="./receta.html?/${id}" class="masINFO" ><p>More information about de recipe</p></a>
             </article>
         `}
    
@@ -102,7 +117,7 @@ recetas.style.margin = "0px"
 
 // FORMULARIO - BUSCADOR 
 
-let qs = loaction.search;
+let qs = location.search;
 let qsObj = new URLSearchParams(qs)
 
 qsObj.get('buscador');

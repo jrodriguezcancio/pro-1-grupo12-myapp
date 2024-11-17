@@ -87,3 +87,8 @@ button{
     height: 35px;
     
 }
+
+/* detalles de las cajas de recetas */
+.masINFO {
+    text-decoration: none;
+}
