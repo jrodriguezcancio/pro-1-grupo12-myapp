@@ -1,11 +1,14 @@
 
+/* BODY */
+
+body {
+    background-color: #fbefca;
+}
 
 /* TODO */
 .TODO{
     background-color: #fbefca;
 } 
-
-
 
 /* HEADER QUE ABARCA LOGO - MENU - BUSCADOR DE RECETAS */
 .header {
@@ -28,8 +31,6 @@
     border-radius: 130px;
     margin: 20px 0px 20px 0px 
 }
-
-
 
 
 /* MENU */
