@@ -1,22 +1,8 @@
-/* probando subit para el buscador (no funciona todavia)
-let buscador = document.querySelector(".formu");
-
-
-buscador.addEventListener('submit', function(event) {
-    let busqueda = buscador.value;
-    event.preventDefault(); // Evita que el formulario se envíe
-    if (busqueda.length > 0 && busqueda.length < 3){
-        alert("busque algo de mínimo 3 caracteres");
-    } else if (busqueda === ""){
-        alert("no deje el campo vacío");
-    }
-}); */
-
 
 let recetas = document.querySelector(".fotorecetas");
 const URL = "https://dummyjson.com/recipes";
 let recetasplus = " ";
-
+let longitud = 0
 
 fetch(URL)
 .then(function(response) {
@@ -27,13 +13,13 @@ fetch(URL)
 
     let lista = data.recipes
     console.log(lista);
-    
-    for (let i = 0; i < lista.length; i++) {
+    longitud += 10
+
+    for (let i = 0; i < longitud; i++) {
         let nombre = (lista[i].name);
         let imagen = (lista[i].image);
         let dificultad = (lista[i].difficulty)
         let id = (lista[i].id)
-        
         
         recetasplus += `
             <article class="article" >
@@ -42,8 +28,20 @@ fetch(URL)
                 <p class= "nivel" >${dificultad} </p>
                 <a href="./receta.html?/${id}" class="masINFO" ><p>More information about de recipe</p></a>
             </article>
+            
         `}
-   
+
+// BOTON DE CARGAR MÁS (NO FUNCIONA) 
+//hay que lograr que entre al for de arriba cada vez que se haga click en cargar más
+
+    let cargarMas = document.querySelector(".cargar")
+    
+        cargarMas.addEventListener('click', function () {
+            longitud += 10
+            alert("longitud:" +longitud)
+        })
+    
+        
     recetas.innerHTML = recetasplus;
 
     let articulos = document.querySelectorAll(".article")
@@ -52,6 +50,8 @@ fetch(URL)
     let titulos = document.querySelectorAll(".titulo")
     let niveles = document.querySelectorAll(".nivel")
     let infos = document.querySelectorAll(".masINFO")
+
+    
 
     for (let n = 0; n < titulos.length; n++) {
         const titulo = titulos[n];
@@ -117,7 +117,19 @@ recetas.style.margin = "0px"
 
 // FORMULARIO - BUSCADOR 
 
-let qs = location.search;
-let qsObj = new URLSearchParams(qs)
 
-qsObj.get('buscador');
+// Probando submit para el buscador (FUNCIONA)
+let buscador = document.querySelector(".buscador");
+
+buscador.addEventListener('submit', function(e) {
+    let variableID = (buscadorID.value)
+
+    if(variableID == "") {
+            alert("El campo no puede estar vacio");
+            e.preventDefault(); // Evita que el formulario se envíe
+    }
+    else if (variableID.length < 3) {
+            alert("El campo debe tener mínimo 3 caracteres");
+            e.preventDefault(); // Evita que el formulario se envíe
+    }
+})

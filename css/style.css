@@ -76,6 +76,10 @@ button{
     margin-bottom: 40px;
 }
 
+.buscador div{
+    display: flex;
+}
+
 .formu {
     width: 600px;
     height: 40px;
@@ -88,7 +92,28 @@ button{
     
 }
 
+
+/* RECETAS */
+
+.TODOfotorecetas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
 /* detalles de las cajas de recetas */
 .masINFO {
     text-decoration: none;
 }
+
+/* Botón CARGAR MÁS */
+
+.cargar{
+    height: 40px;
+    width: 150px;
+    margin: 40px;
+    color: black;
+    background-color: #fbdacb;
+    font-size: 20px;
+}   
