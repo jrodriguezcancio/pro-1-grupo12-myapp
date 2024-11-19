@@ -134,3 +134,11 @@ button{
     color: black;
     border: 1px solid black;
 }
+
+.login{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: flex-end;
+}
