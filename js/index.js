@@ -29,20 +29,37 @@ fetch(URL)
                 <a href="./receta.html?/${id}" class="masINFO" ><p>More information about de recipe</p></a>
             </article>
             
-        `}
-
+        `
+        
+    }
+    recetas.innerHTML = recetasplus;
 // BOTON DE CARGAR MÁS (NO FUNCIONA) 
 //hay que lograr que entre al for de arriba cada vez que se haga click en cargar más
 
     let cargarMas = document.querySelector(".cargar")
     
-        cargarMas.addEventListener('click', function () {
-            longitud += 10
-            alert("longitud:" +longitud)
-        })
+    cargarMas.addEventListener('click', function () {
+        longitud += 10
+        alert("longitud:" +longitud)
+            for (let i = 0; i < longitud && i < lista.length; i++) {
+                let nombre = (lista[i].name);
+                let imagen = (lista[i].image);
+                let dificultad = (lista[i].difficulty)
+                let id = (lista[i].id)
+                    
+                recetasplus += `
+                    <article class="article" >
+                        <p class= "titulo ">${nombre} </p>
+                        <img src="${imagen}" alt="${nombre}" class="imagen">
+                        <p class= "nivel" >${dificultad} </p>
+                        <a href="./receta.html?/${id}" class="masINFO" ><p>More information about de recipe</p></a>
+                    </article>
+                        
+                `}    
+        });
     
-        
-    recetas.innerHTML = recetasplus;
+
+        recetas.innerHTML = recetasplus;
 
     let articulos = document.querySelectorAll(".article")
     let imagenes = document.querySelectorAll(".imagen");
@@ -96,6 +113,7 @@ fetch(URL)
 .catch(function(error) {
     console.log("Error: " + error);
 });
+
 
 
 recetas.style.display = "flex"
