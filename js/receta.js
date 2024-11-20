@@ -25,6 +25,12 @@ fetch(URL)
         let tiempococ = (lista[i].prepTimeMinutes)
         let instrucciones = (lista[i].instructions)
         let ID = (lista[i].id)
+        let categorias = (lista[i].tags)
+        console.log(categorias);
+        // preguntar que codigo hacer para poder rescatar categoria por categoria
+        // y que este definidas en variables distintas para que cuando se haga click
+        // en cada categoria en la página, nos lleve a la categoria específica 
+
         
         if (qs == ("?/"+ID)) { 
         //qs es el id de la receta que clickeamos y ?/+ID ayuda a encontrar la receta 
@@ -35,10 +41,12 @@ fetch(URL)
                     <img src="${imagen}" alt="${nombre}" class="imagen">
                 </article>
                 <article class="artTEXTO" >
-                    <p class= "titulo ">${nombre} </p>
+                    <h1 class= "titulo ">${nombre} </h1>
                     <p class= "instrucciones" >${instrucciones} </p>
                     <p class= "coc" >Tiempo de cocción: ${tiempococ} minutos </p>
+                    <a class= "categorias" href="./category.html"><p>${categorias}</p></a>
                 </article>
+
             </article>`
 
             recetas.innerHTML = recetasplus;
@@ -57,6 +65,7 @@ fetch(URL)
     let titulos = document.querySelectorAll(".titulo")
     let instrucciones = document.querySelectorAll(".instrucciones")
     let cocción = document.querySelectorAll(".coc")
+    let categ = document.querySelectorAll(".categorias")
 
     // ARTICULO FOTORECETA
     for (let dd = 0; dd < artRECETAS.length; dd++) {
@@ -95,11 +104,23 @@ fetch(URL)
         tex.style.flexDirection = "column"
         tex.style.alignItems = "center"
         tex.style.marginRight = "10px"
+        tex.style.textDecoration = "none"
     }
+
+    // CATEGORIAS
+    for (let f = 0; f < categ.length; f++) {
+        const categoria = categ[f];
+        categoria.style.textDecoration = "none"
+        categoria.style.fontWeight = "bold"
+        categoria.style.color = "green"
+        
+    }
+
     // TEXTOS - GENERAL
     for (let iiii = 0; iiii < textos.length; iiii++) {
         const texto = textos[iiii];
         texto.style.fontSize = "20px"
+        
     }
 
     // IMAGEN
@@ -133,6 +154,7 @@ fetch(URL)
         coc.style.fontSize = "20px"
         coc.style.alignItems = "center"
         coc.style.justifyContent = "center"
+        coc.style.margin = "10px"
     }
 
     // INTSRUCCIONES
@@ -140,6 +162,7 @@ fetch(URL)
         const instruccion = instrucciones[q];
     }
 
+    
 
 })
 

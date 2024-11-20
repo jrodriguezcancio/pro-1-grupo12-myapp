@@ -61,16 +61,6 @@ fetch(URL)
 
     }
 
-    /*for (let t = 0; t < niveles.length; t++) {
-        const nivel = niveles[t];
-        
-    }
-
-    for (let u = 0; u < infos.length; u++) {
-        const info = infos[iiii];
-        
-    }*/
-
     for (let iiii = 0; iiii < textos.length; iiii++) {
         const texto = textos[iiii];
         
