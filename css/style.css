@@ -174,7 +174,9 @@ button{
 label {
     display: block;
     margin-bottom: 5px;
+    margin-top: 5px;
     font-weight: bold;
+    text-align: start;
 }
 
 #email {
