@@ -12,31 +12,39 @@ fetch(URL)
 .then(function(data) {
 
     let lista = data.recipes
-    alert(lista)
     console.log(lista);
 
+    let categorias = [ ]
     for (let i = 0; i < lista.length; i++) {
         let categoria = (lista[i].tags)
+        let nombre = (lista[i].name)
+        console.log(nombre);
+        
+        for (let t = 0; t < categoria.length; t++) {
+            let catg = categoria[t]
+            categorias.push(catg)
+            console.log("catg:" +catg);
+            console.log("categorias:" +categorias);
 
-        let categorias = [ ]
-        for (let s = 0; s < categoria.length; s++) {
-            let catg = categoria[s];
-
-            if (catg in categorias){
-                continue
+            for (let j = 0; j < categorias.length; j++) {
+                let catgRepetida = categorias[j];
+                console.log(catgRepetida);
+                
+                /*if (catg === catgRepetida){
+                    continue
+                }
+                else {
+                    categoriaPlus += `
+                        <article class="category${t}" >
+                            <a href="./category.html">${catg}</a>
+                        </article>
+                `
+                    categoriasSection.innerHTML = categoriaPlus;
+                }*/
+               // Preguntar porque repite tantas vecs todo
             }
-            else {
-                categorias.push(catg)
-                categoriaPlus += `
-                    <article class="category${s}" >
-                        <a href="./category.html">${catg}</a>
-                    </article>
-            `
-            categoriasSection.innerHTML = categoriaPlus;
-            }
-            }
-            alert(categorias)
-            }      
+        }    
+}
 })
 
 .catch(function(error) {
