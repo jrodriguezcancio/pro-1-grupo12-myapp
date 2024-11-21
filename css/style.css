@@ -179,13 +179,13 @@ label {
     text-align: start;
 }
 
-#email {
+#emailID {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-#contrasenia{
+#contraseñaID{
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;

@@ -1,19 +1,19 @@
-let login = document.querySelector(".login")
 
-login.addEventListener('submit', function(e) {
-    let email = (email.value)
 
-if(email == "") {
-    alert("El campo no puede estar vacio");
-    e.preventDefault();
-}
-})
+let formulario = document.querySelector(".formulario");
 
-login.addEventListener('submit', function(e) {
-    let contrasennia = (contrasennia.value)
+formulario.addEventListener('submit', function(e) {
+    let email = (emailID.value)
+    let password = (contraseñaID.value)
 
-if(contrasennia == "") {
-    alert("El campo no puede estar vacio");
-    e.preventDefault();
-}
+    if(email == "") {
+            alert("El campo email no puede estar vacio");
+            e.preventDefault(); // Evita que el formulario se envíe
+    }
+    
+    if (password = "") {
+        alert("El campo password no puede estar vacio");
+        e.preventDefault(); // Evita que el formulario se envíe
+    } 
+
 })
