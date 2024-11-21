@@ -124,16 +124,25 @@ button{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    align-content: center;
-    align-items: flex-end;
+    margin-top: 20px;
+    height: 20%;
+    width: 20%;
+    justify-content: center;
+    align-items: center; 
+    font-family: Arial, sans-serif;
+    background-color: rgba(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
-.registro a {
+/*.registro a {
     background-color: rgb(164, 156, 156);
     text-decoration: none;
     color: black;
     border: 1px solid black;
-}
+}*/
 
 .login{
     display: flex;
@@ -142,3 +151,57 @@ button{
     align-content: center;
     align-items: flex-end;
 }
+
+.log {
+    margin-top: 20px;
+    height: 20%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    font-family: Arial, sans-serif;
+    background-color: rgba(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+.mucho{
+    display: flex;
+    justify-content: space-around;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#email {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#contrasenia{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.link {
+    display: block;
+    margin-top: 10px;
+    color: #e74340;
+    text-decoration: none;
+}
+
+.boton{
+    background-color: #e74340;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
