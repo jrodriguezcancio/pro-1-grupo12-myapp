@@ -18,7 +18,7 @@ fetch(URL)
     for (let i = 0; i < lista.length; i++) {
         let categoria = (lista[i].tags)
         let nombre = (lista[i].name)
-        console.log(nombre);
+        console.log("categoria:" +categoria);
         
         for (let t = 0; t < categoria.length; t++) {
             let catg = categoria[t]
@@ -28,19 +28,21 @@ fetch(URL)
 
             for (let j = 0; j < categorias.length; j++) {
                 let catgRepetida = categorias[j];
-                console.log(catgRepetida);
-                
-                /*if (catg === catgRepetida){
+                console.log("catg Repetida:"  +catgRepetida);
+
+                if (catg == catgRepetida){
+                    console.log("cccc:" +catgRepetida);
+                    
                     continue
                 }
                 else {
-                    categoriaPlus += `
+                    /*categoriaPlus += `
                         <article class="category${t}" >
                             <a href="./category.html">${catg}</a>
                         </article>
                 `
-                    categoriasSection.innerHTML = categoriaPlus;
-                }*/
+                    categoriasSection.innerHTML = categoriaPlus;*/
+                }
                // Preguntar porque repite tantas vecs todo
             }
         }    
