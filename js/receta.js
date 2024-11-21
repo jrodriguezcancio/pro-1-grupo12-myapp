@@ -89,6 +89,7 @@ fetch(URL)
         articulo.style.borderRadius = "20px"
         articulo.style.backgroundColor = "#fbfbed"
         articulo.style.width = "950px"
+        
     }
 
     // ARTICULO DE LA IMAGEN

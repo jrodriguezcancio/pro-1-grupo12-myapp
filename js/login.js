@@ -1,19 +1,23 @@
 
-
 let formulario = document.querySelector(".formulario");
 
+// Login - Email
 formulario.addEventListener('submit', function(e) {
     let email = (emailID.value)
-    let password = (contraseñaID.value)
 
     if(email == "") {
-            alert("El campo email no puede estar vacio");
+            alert("Por favor complete el campo email");
             e.preventDefault(); // Evita que el formulario se envíe
     }
-    
-    if (password = "") {
-        alert("El campo password no puede estar vacio");
+})
+
+// Login - Contraseña 
+formulario.addEventListener('submit', function (e) {
+    let password = (contraseñaID.value)
+
+    if (password == "") {
+        alert("Por favor complete el campo contraseña");
         e.preventDefault(); // Evita que el formulario se envíe
     } 
-
 })
+    
