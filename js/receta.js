@@ -4,6 +4,10 @@ let qsobj = new URLSearchParams(qs);
 let idreceta = qsobj.get("id");
 let recetas = document.querySelector(".fotorecetas");
 let URL = `https://dummyjson.com/recipes`;
+let URLcateg = 'https://dummyjson.com/recipes/tag';
+alert(URLcateg)
+console.log(URLcateg);
+
 let recetasplus = " ";
 
 // preguntar de que sirve qsobj y idreceta, 
@@ -25,12 +29,8 @@ fetch(URL)
         let tiempococ = (lista[i].prepTimeMinutes)
         let instrucciones = (lista[i].instructions)
         let ID = (lista[i].id)
-        let categorias = (lista[i].tags)
+        let categorias = (lista[i].tags) // aca hacer el for
         console.log(categorias);
-        // preguntar que codigo hacer para poder rescatar categoria por categoria
-        // y que este definidas en variables distintas para que cuando se haga click
-        // en cada categoria en la página, nos lleve a la categoria específica 
-
         
         if (qs == ("?/"+ID)) { 
         //qs es el id de la receta que clickeamos y ?/+ID ayuda a encontrar la receta 
@@ -44,9 +44,8 @@ fetch(URL)
                     <h1 class= "titulo ">${nombre} </h1>
                     <p class= "instrucciones" >${instrucciones} </p>
                     <p class= "coc" >Tiempo de cocción: ${tiempococ} minutos </p>
-                    <a class= "categorias" href="./category.html"><p>${categorias}</p></a>
+                    
                 </article>
-
             </article>`
 
             recetas.innerHTML = recetasplus;
@@ -54,7 +53,21 @@ fetch(URL)
         } else {
             continue
         }
+
+        let catHTML = document.querySelector(".categorias")
+        alert("CatHTML:" +catHTML)
+        for (let j = 0; j < categorias.length; j++) {
+            const catESPECIFICA = categorias[j];
+            alert(catESPECIFICA)
+            catHTML += `<a  href="./category.html"><p>${catESPECIFICA}</p></a>`
+
+        // preguntar que codigo hacer para poder rescatar categoria por categoria
+        // y que este definidas en variables distintas para que cuando se haga click
+        // en cada categoria en la página, nos lleve a la categoria específica 
         }
+    }
+
+    
 
     let artRECETAS = document.querySelectorAll(".fotorecetas")
     let articulos = document.querySelectorAll(".article")
@@ -170,3 +183,6 @@ fetch(URL)
 .catch(function(error) {
     console.log("Error: " + error);
 });
+
+
+

@@ -15,7 +15,6 @@ fetch(URL)
 
     let listaRECETAS = data.recipes
     console.log(listaRECETAS);
-    
 
     for (let i = 0; i < listaRECETAS.length; i++) {
         let nombre = (listaRECETAS[i].name);
@@ -34,7 +33,7 @@ fetch(URL)
                         <p class= "titulo ">${nombre} </p>
                         <img src="${imagen}" alt="${nombre}" class="imagen">
                         <p class= "nivel" >${dificultad} </p>
-                        <a href="./receta.html?/${id}" class="masINFO" ><p>More information about de recipe</p></a>
+                        <a href="./receta.html?/${id}" class="masINFO" ><p>More information about the recipe</p></a>
                     </article>
                 `
             }

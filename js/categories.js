@@ -2,7 +2,7 @@
 let categoriasSection = document.querySelector(".categories");
 const URL = "https://dummyjson.com/recipes";
 let categoriaPlus = " ";
-let longitud = 0
+
 
 fetch(URL)
 .then(function(response) {
