@@ -11,42 +11,46 @@ fetch(URL)
 
 .then(function(data) {
 
-    let lista = data.recipes
-    console.log(lista);
+    let recetas = data.recipes
+    console.log(recetas);
 
-    let categorias = [ ]
-    for (let i = 0; i < lista.length; i++) {
-        let categoria = (lista[i].tags)
-        let nombre = (lista[i].name)
-        console.log("categoria:" +categoria);
+    let categoriaARRAY = [ ]
+    for (let i = 0; i < recetas.length; i++) {
+        let categoria = (recetas[i].tags)
+        /*let nombre = (lista[i].name)*/
         
         for (let t = 0; t < categoria.length; t++) {
             let catg = categoria[t]
-            categorias.push(catg)
-            console.log("catg:" +catg);
-            console.log("categorias:" +categorias);
+            categoriaARRAY.push(catg + " ")
+            
+            
+        }
+    }
 
-            for (let j = 0; j < categorias.length; j++) {
-                let catgRepetida = categorias[j];
-                console.log("catg Repetida:"  +catgRepetida);
+    let categoriasORDENADAS = categoriaARRAY.sort()
+    console.log("ORDENADAS:" +categoriasORDENADAS);
 
-                if (catg == catgRepetida){
-                    console.log("cccc:" +catgRepetida);
-                    
-                    continue
-                }
-                else {
-                    /*categoriaPlus += `
-                        <article class="category${t}" >
-                            <a href="./category.html">${catg}</a>
-                        </article>
+    let ordenadaANT = " "
+
+    for (let D = 0; D < categoriasORDENADAS.length; D++) {
+        const ordenadasNEW = categoriasORDENADAS[D];
+        
+        if (ordenadasNEW == ordenadaANT) {
+            console.log("REPETIDA:" +ordenadasNEW);   
+            continue
+        }
+        else {
+            console.log("No repetida:" +ordenadasNEW);
+            ordenadaANT = ordenadasNEW
+            
+                categoriaPlus += `
+                    <article class="category" >
+                        <a href="./category.html?/${ordenadasNEW}">${ordenadasNEW}</a>
+                    </article>
                 `
-                    categoriasSection.innerHTML = categoriaPlus;*/
-                }
-               // Preguntar porque repite tantas vecs todo
+                categoriasSection.innerHTML = categoriaPlus;
             }
-        }    
-}
+    }
 })
 
 .catch(function(error) {

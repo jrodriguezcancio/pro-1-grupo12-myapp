@@ -1,3 +1,11 @@
+// COSAS PARA PREGUNTAR 
+
+// 1 - Como hacer lo de "cargar más", utilizo longitud en el for y no funciona
+// 2 - Como sacar el "?/" del qs en receta.js y category.js, preguntar si esta bien escrito eso o deberia estar escrito al reves (/?)
+// 3 - Como hacer el titulo de la categoria en category.js
+// 4 - Preguntar que hay que poner en el register.js, ya que utilizamos el required en el html para avisar que los campos estan sin completar 
+// 5 - Como hacer lo de search-results
+
 
 let recetas = document.querySelector(".fotorecetas");
 const URL = "https://dummyjson.com/recipes";
@@ -11,15 +19,15 @@ fetch(URL)
 
 .then(function(data) {
 
-    let lista = data.recipes
-    console.log(lista);
+    let listaRECETAS = data.recipes
+    console.log(listaRECETAS);
     longitud += 10
 
     for (let i = 0; i < longitud; i++) {
-        let nombre = (lista[i].name);
-        let imagen = (lista[i].image);
-        let dificultad = (lista[i].difficulty)
-        let id = (lista[i].id)
+        let nombre = (listaRECETAS[i].name);
+        let imagen = (listaRECETAS[i].image);
+        let dificultad = (listaRECETAS[i].difficulty)
+        let id = (listaRECETAS[i].id)
         
         recetasplus += `
             <article class="article" >
@@ -30,7 +38,6 @@ fetch(URL)
             </article>
             
         `
-        
     }
     recetas.innerHTML = recetasplus;
 // BOTON DE CARGAR MÁS (NO FUNCIONA) 
@@ -41,11 +48,11 @@ fetch(URL)
     cargarMas.addEventListener('click', function () {
         longitud += 10
         alert("longitud:" +longitud)
-            for (let i = 0; i < longitud && i < lista.length; i++) {
-                let nombre = (lista[i].name);
-                let imagen = (lista[i].image);
-                let dificultad = (lista[i].difficulty)
-                let id = (lista[i].id)
+            for (let i = 0; i < longitud && i < listaRECETAS.length; i++) {
+                let nombre = (listaRECETAS[i].name);
+                let imagen = (listaRECETAS[i].image);
+                let dificultad = (listaRECETAS[i].difficulty)
+                let id = (listaRECETAS[i].id)
                     
                 recetasplus += `
                     <article class="article" >
@@ -80,7 +87,7 @@ fetch(URL)
     for (let iii = 0; iii < articulos.length; iii++) {
         const articulo = articulos[iii];
         articulo.style.border = "2px solid black";
-        articulo.style.margin = ""
+        articulo.style.margin = " "
         articulo.style.display = "flex"
         articulo.style.flexDirection = "column"
         articulo.style.flexWrap = "nowrap"

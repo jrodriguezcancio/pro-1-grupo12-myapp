@@ -241,3 +241,31 @@ label {
     text-align: center;
     background-color: rgb(251, 251, 237);
 }
+
+
+/* CATEGORY.HTML */
+
+.categories{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.category{
+    font-size: 30px;
+    margin: 50px 35px 0px 35px;
+    display: flex;
+    background-color: #fbfbed;
+    width: 220px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(255, 224, 112);
+    filter: drop-shadow(2px 2px 4px rgb(179, 158, 81));
+}
+
+.category a{
+    text-decoration: none;
+    color: black;
+}
