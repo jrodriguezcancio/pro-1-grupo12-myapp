@@ -104,7 +104,6 @@ fetch(URL)
         else if (nivel == "Medium") {
             nivel.style.backgroundColor = "yellow"
         }
-
     }
 })
 

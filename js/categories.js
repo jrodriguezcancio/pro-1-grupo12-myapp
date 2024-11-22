@@ -23,7 +23,6 @@ fetch(URL)
             let catg = categoria[t]
             categoriaARRAY.push(catg + " ")
             
-            
         }
     }
 
