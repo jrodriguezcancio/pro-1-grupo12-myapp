@@ -5,12 +5,13 @@
 // 3 - Como hacer el titulo de la categoria en category.js
 // 4 - Preguntar que hay que poner en el register.js, ya que utilizamos el required en el html para avisar que los campos estan sin completar 
 // 5 - Como hacer lo de search-results
+// 6 - Preguntar si esta bien modificar los articlos desde el js y no desde el css
 
 
 let recetas = document.querySelector(".fotorecetas");
 const URL = "https://dummyjson.com/recipes";
 let recetasplus = " ";
-let longitud = 0
+let longitud = 10;
 
 fetch(URL)
 .then(function(response) {
@@ -21,8 +22,8 @@ fetch(URL)
 
     let listaRECETAS = data.recipes
     console.log(listaRECETAS);
-    longitud += 10
-
+    
+function recetasMAS() {
     for (let i = 0; i < longitud; i++) {
         let nombre = (listaRECETAS[i].name);
         let imagen = (listaRECETAS[i].image);
@@ -40,33 +41,17 @@ fetch(URL)
         `
     }
     recetas.innerHTML = recetasplus;
+    longitud += 10
+}
+    
 // BOTON DE CARGAR MÁS (NO FUNCIONA) 
 //hay que lograr que entre al for de arriba cada vez que se haga click en cargar más
 
     let cargarMas = document.querySelector(".cargar")
     
-    cargarMas.addEventListener('click', function () {
-        longitud += 10
-        alert("longitud:" +longitud)
-            for (let i = 0; i < longitud && i < listaRECETAS.length; i++) {
-                let nombre = (listaRECETAS[i].name);
-                let imagen = (listaRECETAS[i].image);
-                let dificultad = (listaRECETAS[i].difficulty)
-                let id = (listaRECETAS[i].id)
-                    
-                recetasplus += `
-                    <article class="article" >
-                        <p class= "titulo ">${nombre} </p>
-                        <img src="${imagen}" alt="${nombre}" class="imagen">
-                        <p class= "nivel" >${dificultad} </p>
-                        <a href="./receta.html?/${id}" class="masINFO" ><p>More information about de recipe</p></a>
-                    </article>
-                        
-                `}    
-        });
+    cargarMas.addEventListener('click', recetasMAS);
+    recetasMAS();
     
-
-        recetas.innerHTML = recetasplus;
 
     let articulos = document.querySelectorAll(".article")
     let imagenes = document.querySelectorAll(".imagen");
