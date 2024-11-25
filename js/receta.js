@@ -1,18 +1,26 @@
+// (SIN TERMINAR)
+
+// FALTA:
+    // 1 - Extraer el Id de la receta correcetamente
+    // 2 - Sacar los for y reemplazarlos en el css para reducir el código 
+        // pero que quede con el mismo formato que tiene 
+
+
+//Extraemos el valor del id de la receta seleccionada
 let qs = location.search; // con esto podemos extraer el id
+alert("qs:" +qs)
+let qsObj = new URLSearchParams(qs);
+alert("qsObj:" +qsObj)
+let IDreceta = qsObj.get('id');
+alert("IDreceta:" +IDreceta)
 
-let qsobj = new URLSearchParams(qs);
-let idreceta = qsobj.get("id");
-let recetas = document.querySelector(".fotorecetas");
-let URL = `https://dummyjson.com/recipes`;
-let URLcateg = 'https://dummyjson.com/recipes/tag';
-alert(URLcateg)
-console.log(URLcateg);
 
+// Hay que lograr extraer el ID de la receta utilizando esta URL
+// El problema es que al extrar por qs nos da "?/ + id "
+let URL = `https://dummyjson.com/recipes/1`;
+
+let receta = document.querySelector(".fotorecetas");
 let recetasplus = " ";
-
-// preguntar de que sirve qsobj y idreceta, 
-//ya que unicamente con qs pudimos extraer el id
-
 
 fetch(URL)
 .then(function(response) {
@@ -20,53 +28,30 @@ fetch(URL)
 })
 
 .then(function(data) {
-
-    let lista = data.recipes
-    
-    for (let i = 0; i < lista.length; i++) {
-        let nombre = (lista[i].name);
-        let imagen = (lista[i].image);
-        let tiempococ = (lista[i].prepTimeMinutes)
-        let instrucciones = (lista[i].instructions)
-        let ID = (lista[i].id)
-        let categorias = (lista[i].tags) // aca hacer el for
-        console.log(categorias);
+    console.log(data);
         
-        if (qs == ("?/"+ID)) { 
-        //qs es el id de la receta que clickeamos y ?/+ID ayuda a encontrar la receta 
+    let nombre = (data.name);
+    let imagen = (data.image);
+    let tiempococ = (data.prepTimeMinutes)
+    let instrucciones = (data.instructions)
+    let ID = (data.id)
+    let categorias = (data.tags) 
+    console.log(categorias);
+        
+    recetasplus += `
+    <article class="article" >
+        <article class="artIMAGEN" >
+            <img src="${imagen}" alt="${nombre}" class="imagen">
+        </article>
+        <article class="artTEXTO" >
+            <h1 class= "titulo ">${nombre} </h1>
+            <p class= "instrucciones" >${instrucciones} </p>
+            <p class= "coc" >Tiempo de cocción: ${tiempococ} minutos </p>
             
-            recetasplus += `
-            <article class="article" >
-                <article class="artIMAGEN" >
-                    <img src="${imagen}" alt="${nombre}" class="imagen">
-                </article>
-                <article class="artTEXTO" >
-                    <h1 class= "titulo ">${nombre} </h1>
-                    <p class= "instrucciones" >${instrucciones} </p>
-                    <p class= "coc" >Tiempo de cocción: ${tiempococ} minutos </p>
-                    
-                </article>
-            </article>`
+        </article>
+    </article>`
 
-            recetas.innerHTML = recetasplus;
-        
-        } else {
-            continue
-        }
-
-        let catHTML = document.querySelector(".categorias")
-        alert("CatHTML:" +catHTML)
-        for (let j = 0; j < categorias.length; j++) {
-            const catESPECIFICA = categorias[j];
-            alert(catESPECIFICA)
-            catHTML += `<a  href="./category.html"><p>${catESPECIFICA}</p></a>`
-
-        // preguntar que codigo hacer para poder rescatar categoria por categoria
-        // y que este definidas en variables distintas para que cuando se haga click
-        // en cada categoria en la página, nos lleve a la categoria específica 
-        }
-    }
-
+            receta.innerHTML = recetasplus;
     
 
     let artRECETAS = document.querySelectorAll(".fotorecetas")
@@ -76,7 +61,6 @@ fetch(URL)
     let imagenes = document.querySelectorAll(".imagen");
     let textos = document.querySelectorAll ("p")
     let titulos = document.querySelectorAll(".titulo")
-    let instrucciones = document.querySelectorAll(".instrucciones")
     let cocción = document.querySelectorAll(".coc")
     let categ = document.querySelectorAll(".categorias")
 
@@ -171,18 +155,8 @@ fetch(URL)
         coc.style.margin = "10px"
     }
 
-    // INTSRUCCIONES
-    for (let q = 0; q < instrucciones.length; q++) {
-        const instruccion = instrucciones[q];
-    }
-
-    
-
 })
 
 .catch(function(error) {
     console.log("Error: " + error);
 });
-
-
-
