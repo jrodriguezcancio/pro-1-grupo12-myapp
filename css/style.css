@@ -1,5 +1,5 @@
 
-/* BODY */
+                    /* BODY */
 
 body {
     background-image: url(../img/backgroundIMAGEb.jpeg);
@@ -9,7 +9,7 @@ body {
     
 }
 
-/* TODO */
+                    /* TODO */
 .TODO{
     background-image: url(../img/backgroundIMAGEb.jpeg);
     background-repeat: no-repeat;
@@ -17,7 +17,8 @@ body {
     background-size: cover;
 } 
 
-/* HEADER QUE ABARCA LOGO - MENU - BUSCADOR DE RECETAS */
+        /* HEADER QUE ABARCA:LOGO - MENU - BUSCADOR DE RECETAS */
+
 .header {
     display: flex;
     flex-wrap: nowrap;
@@ -77,7 +78,7 @@ h1 {
 }
 
 
-/* FOOTER - INTEGRANTES DEL GRUPO */
+                /* FOOTER - INTEGRANTES DEL GRUPO */
 
 footer {
     display: flex;
@@ -94,7 +95,7 @@ footer p{
 }
 
 
-/* BUSCADOR DE RECETAS */
+                /* BUSCADOR DE RECETAS */
 
 button{
     color: white;
@@ -119,14 +120,13 @@ button{
     height: 40px;
 }
 
-
 .lupa{
     width: 35px;
     height: 35px;
     
 }
 
-/* RECETAS */
+                    /* RECETAS */
 
 .TODOfotorecetas{
     display: flex;
@@ -181,7 +181,7 @@ button{
 }
 
 
-/* detalles de las cajas de recetas */
+/* DETALLES DE LAS CAJAS DE RECETAS */
 .masINFO {
     text-decoration: none;
 }
@@ -198,7 +198,7 @@ button{
 }   
 
 
-/* REGISTER */
+                    /* REGISTER - HTML */
 
 .mucho{
     display: flex;
@@ -220,9 +220,6 @@ button{
     text-align: center;
     background-color: rgb(251, 251, 237);
 }
-
-
-
 
 label {
     display: block;
@@ -262,7 +259,8 @@ label {
     margin: 20px;
 }
 
-/* LOGIN */ 
+
+                    /* LOGIN - HTML*/ 
 
 .login{
     display: flex;
@@ -289,7 +287,7 @@ label {
 }
 
 
-/* CATEGORY.HTML */
+                    /* CATEGORY - HTML */
 
 .categories{
     display: flex;
@@ -315,6 +313,11 @@ label {
     text-decoration: none;
     color: black;
 }
+
+
+
+
+                /* RESPONSIVE - CELULAR */
 
 @media(max-width: 391px){
 .header{

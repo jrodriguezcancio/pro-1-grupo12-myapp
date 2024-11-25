@@ -1,3 +1,4 @@
+// (TERMINADO)
 
 let formulario = document.querySelector(".formulario");
 

@@ -1,8 +1,12 @@
+// (TERMINADO)
 
-let paramCategoria = location.search
+// Extraemos los valores 
+let qs = location.search
+let qsObj = new URLSearchParams(qs);
+let paramCategoria = qsObj.get('tag');
 
+const URL = `https://dummyjson.com/recipes/tag/${paramCategoria}` // Get recipe by a tag
 let recetas = document.querySelector(".fotorecetas");
-const URL = "https://dummyjson.com/recipes";
 let recetasplus = " ";
 
 
@@ -12,32 +16,25 @@ fetch(URL)
 })
 
 .then(function(data) {
+    console.log(data);
+    
+    let recetasCATEG = data.recipes
+    console.log(recetasCATEG);
 
-    let listaRECETAS = data.recipes
-    console.log(listaRECETAS);
+    for (let i = 0; i < recetasCATEG.length; i++) {
+        let nombre = (recetasCATEG[i].name);
+        let imagen = (recetasCATEG[i].image);
+        let dificultad = (recetasCATEG[i].difficulty)
+        let id = (recetasCATEG[i].id)
 
-    for (let i = 0; i < listaRECETAS.length; i++) {
-        let nombre = (listaRECETAS[i].name);
-        let imagen = (listaRECETAS[i].image);
-        let dificultad = (listaRECETAS[i].difficulty)
-        let id = (listaRECETAS[i].id)
-        let tags = (listaRECETAS[i].tags)
-
-        // Utilizamos este for para poder filtrar las recetas que contienen la categoria seleccionada
-        for (let p = 0; p < tags.length; p++) {
-            const categoria = tags[p];
-            
-            if(paramCategoria == ("?/"+categoria)) {
-                recetasplus += `
-                    <article class="article" >
-                        <p class= "titulo ">${nombre} </p>
-                        <img src="${imagen}" alt="${nombre}" class="imagen">
-                        <p class= "nivel" >${dificultad} </p>
-                        <a href="./receta.html?/${id}" class="masINFO" ><p>More information about the recipe</p></a>
-                    </article>
-                `
-            }
-        }
+            recetasplus += `
+                <article class="article" >
+                    <p class= "titulo ">${nombre} </p>
+                    <img src="${imagen}" alt="${nombre}" class="imagen">
+                    <p class= "nivel" >${dificultad} </p>
+                    <a href="./receta.html?/${id}" class="masINFO" ><p>More information about the recipe</p></a>
+                </article>
+            `        
     }
 
     recetas.innerHTML = recetasplus;
@@ -47,6 +44,4 @@ fetch(URL)
 .catch(function(error) {
     console.log("Error: " + error);
 });
-
-
 

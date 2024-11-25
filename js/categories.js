@@ -1,6 +1,9 @@
+// (TERMINADO)
 
 let categoriasSection = document.querySelector(".categories");
-const URL = "https://dummyjson.com/recipes";
+const URL = 'https://dummyjson.com/recipes/tags' // Get all recipes tags
+// Esta URL nos permite extraer todas las categorias que hay 
+
 let categoriaPlus = " ";
 
 
@@ -11,44 +14,19 @@ fetch(URL)
 
 .then(function(data) {
 
-    let recetas = data.recipes
-    console.log(recetas);
+    console.log(data);
+    
+    // Hacemos un for para que vaya categoria por categoria y agregar cada una al HTML
+    for (let i = 0; i < data.length; i++) {
+        const categoria = data[i];
 
-    let categoriaARRAY = [ ]
-    for (let i = 0; i < recetas.length; i++) {
-        let categoria = (recetas[i].tags)
-        /*let nombre = (lista[i].name)*/
-        
-        for (let t = 0; t < categoria.length; t++) {
-            let catg = categoria[t]
-            categoriaARRAY.push(catg + " ")
-            
-        }
-    }
-
-    let categoriasORDENADAS = categoriaARRAY.sort()
-    console.log("ORDENADAS:" +categoriasORDENADAS);
-
-    let ordenadaANT = " "
-
-    for (let D = 0; D < categoriasORDENADAS.length; D++) {
-        const ordenadasNEW = categoriasORDENADAS[D];
-        
-        if (ordenadasNEW == ordenadaANT) {
-            console.log("REPETIDA:" +ordenadasNEW);   
-            continue
-        }
-        else {
-            console.log("No repetida:" +ordenadasNEW);
-            ordenadaANT = ordenadasNEW
-            
-                categoriaPlus += `
+        categoriaPlus += `
                     <article class="category" >
-                        <a href="./category.html?/${ordenadasNEW}">${ordenadasNEW}</a>
+                        <a href="./category.html?tag=${categoria}" >${categoria}</a>
                     </article>
                 `
                 categoriasSection.innerHTML = categoriaPlus;
-            }
+        
     }
 })
 
