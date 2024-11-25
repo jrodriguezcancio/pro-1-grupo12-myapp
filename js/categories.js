@@ -28,11 +28,25 @@ fetch(URL)
                 categoriasSection.innerHTML = categoriaPlus;
     
     }
-       /* let artCatg = document.querySelector(".category")
-        categoriasSection.addEventListener("mouseover" , function () {
-            artCatg.style.backgroundColor = "red";}) */
-})
+        
+    let categArt = document.querySelectorAll(".category")
 
+    for (let i = 0; i < categArt.length; i++) {
+        let category = categArt[i];
+        
+        category.addEventListener('mouseover', function () {
+            category.style.backgroundColor = "#efef76";
+            category.style.border = "2px solid rgb(251 255 109)";
+
+        });
+
+        category.addEventListener('mouseout', function () {
+            category.style.backgroundColor = ""; // vuelve al color original
+            category.style.border = "";
+        });
+    }
+        
+})
 .catch(function(error) {
     console.log("Error: " + error);
 });

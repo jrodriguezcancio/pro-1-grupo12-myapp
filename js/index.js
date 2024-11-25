@@ -43,10 +43,13 @@ function obtenerRecetas(skip){
 
             article.addEventListener('mouseover', function () {
                 article.style.backgroundColor = "rgb(200, 245, 230)";
+                article.style.border = "4px solid #57b4ad";
+
             });
 
             article.addEventListener('mouseout', function () {
                 article.style.backgroundColor = ""; // vuelve al color original
+                article.style.border = "";
             });
         }
         
