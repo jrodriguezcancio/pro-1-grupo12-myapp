@@ -44,6 +44,21 @@ fetch(URL)
     }
 
     recetas.innerHTML = recetasplus;
+    let articles = document.querySelectorAll(".article");
+
+    // Asignamos eventos de mouseover y mouseout con un ciclo tradicional
+    for (let i = 0; i < articles.length; i++) {
+        let article = articles[i];
+
+        article.addEventListener('mouseover', function () {
+            article.style.backgroundColor = "rgb(200, 245, 230)";
+        });
+
+        article.addEventListener('mouseout', function () {
+            article.style.backgroundColor = ""; // vuelve al color original
+        });
+    }
+    
 
 })
 
