@@ -155,9 +155,6 @@ button{
     padding: 5px
 }
 
-.article p {
-    color: black;
-}
 
 .titulo {
     color: black;
@@ -176,15 +173,28 @@ button{
 }
 
 .nivel {
-    color: black;
+    font-weight: bold;
+    color: rgb(255, 28, 28);
     padding: 6px 12px;
+    margin-top: 0px;
+    margin-bottom: 10px;
 }
 
-
-/* DETALLES DE LAS CAJAS DE RECETAS */
 .masINFO {
     text-decoration: none;
+    border: 2px solid #1c3dce;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 5px;
+    background-color: #d9dfff;
 }
+
+.masINFO p{
+    margin: 0px;
+    color: black;
+}
+
+
 
 /* Botón CARGAR MÁS */
 

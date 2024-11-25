@@ -1,8 +1,9 @@
 // (SIN TERMINAR)
 
 // FALTA:
-// 1 - Extraer el Id de la receta correcetamente
-// 2 - Sacar los for y reemplazarlos en el css para reducir el código 
+    // 1 - Extraer el Id de la receta correcetamente
+    // 2 - Sacar los for y reemplazarlos en el css para reducir el código 
+        // pero que quede con el mismo formato que tiene 
 
 
 //Extraemos el valor del id de la receta seleccionada

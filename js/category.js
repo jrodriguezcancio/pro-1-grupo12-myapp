@@ -1,4 +1,8 @@
-// (TERMINADO)
+// (SN TERMINAR)
+
+// FALTA:
+    // 1- Poner un tiulo, h1, que diga el nombre de la caegoria seleccionada
+        // y abajo todas las recetas
 
 // Extraemos los valores 
 let qs = location.search
@@ -8,6 +12,8 @@ let paramCategoria = qsObj.get('tag');
 const URL = `https://dummyjson.com/recipes/tag/${paramCategoria}` // Get recipe by a tag
 let recetas = document.querySelector(".fotorecetas");
 let recetasplus = " ";
+
+let titulo = document.querySelectorAll("h1")
 
 
 fetch(URL)

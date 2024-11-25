@@ -1,4 +1,12 @@
-// (TERMINADO)
+// (SIN TERMINAR)
+
+// FALTA:
+    // 1- Que la página muestre el término buscado. Ejemplo: 
+        // “Resultados de búsqueda para: término ingresado en el input.”
+
+    // 2- Para el caso de no haber resultados que coincidan con 
+        //el término buscado la página debe avisar al usuario que no hay coincidencias.
+
 
 //Extraigo los valores buscados por el usuario
 let qs = location.search 

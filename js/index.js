@@ -22,7 +22,7 @@ function obtenerRecetas(skip){
             let imagen = (listaRECETAS[i].image);
             let dificultad = (listaRECETAS[i].difficulty)
             let id = (listaRECETAS[i].id)
-            
+
             recetasplus += `
                 <article class="article" >
                     <p class= "titulo ">${nombre} </p>
@@ -40,6 +40,7 @@ function obtenerRecetas(skip){
             // Este if nos va a permitir que solo se impriman por pantalla 
             // hasta 10 recetas
         }
+
     })
 }
 

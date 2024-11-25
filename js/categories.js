@@ -26,10 +26,14 @@ fetch(URL)
                     </article>
                 `
                 categoriasSection.innerHTML = categoriaPlus;
-        
+    
     }
+       /* let artCatg = document.querySelector(".category")
+        categoriasSection.addEventListener("mouseover" , function () {
+            artCatg.style.backgroundColor = "red";}) */
 })
 
 .catch(function(error) {
     console.log("Error: " + error);
 });
+
