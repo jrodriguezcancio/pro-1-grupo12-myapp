@@ -13,7 +13,7 @@ let qsObj = new URLSearchParams(qs);
 alert("qsObj:" +qsObj)
 let IDreceta = qsObj.get('id');
 alert("IDreceta:" +IDreceta)
-
+    
 
 // Hay que lograr extraer el ID de la receta utilizando esta URL
 // El problema es que al extrar por qs nos da "?/ + id "
