@@ -28,7 +28,7 @@ function obtenerRecetas(skip){
                     <p class= "titulo ">${nombre} </p>
                     <img src="${imagen}" alt="${nombre}" class="imagen">
                     <p class= "nivel" >${dificultad} </p>
-                    <a href="./receta.html?/id=${id}"  class="masINFO" ><p>More information about the recipe</p></a>
+                    <a href="./receta.html?id=${id}"  class="masINFO" ><p>More information about the recipe</p></a>
                 </article>
             `
         }

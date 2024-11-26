@@ -13,6 +13,7 @@ let qs = location.search
 let qsObj = new URLSearchParams(qs);
 let buscado = qsObj.get("buscadorNAME");
 
+
 let URL = `https://dummyjson.com/recipes/search${qs}`;
 let recetas = document.querySelector(".fotorecetas");
 let resultados = " ";

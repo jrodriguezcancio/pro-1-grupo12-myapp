@@ -1,23 +1,24 @@
 // (SIN TERMINAR)
 
 // FALTA:
-    // 1 - Extraer el Id de la receta correcetamente
-    // 2 - Sacar los for y reemplazarlos en el css para reducir el código 
+    // 1 - Sacar los for y reemplazarlos en el css para reducir el código 
         // pero que quede con el mismo formato que tiene 
 
 
 //Extraemos el valor del id de la receta seleccionada
 let qs = location.search; // con esto podemos extraer el id
-alert("qs:" +qs)
+console.log(qs);
+
 let qsObj = new URLSearchParams(qs);
-alert("qsObj:" +qsObj)
-let IDreceta = qsObj.get('id');
-alert("IDreceta:" +IDreceta)
+
+let IDreceta = qsObj.get("id");
+console.log(IDreceta); 
+
     
 
 // Hay que lograr extraer el ID de la receta utilizando esta URL
 // El problema es que al extrar por qs nos da "?/ + id "
-let URL = `https://dummyjson.com/recipes/1`;
+let URL = `https://dummyjson.com/recipes/${IDreceta}`;
 
 let receta = document.querySelector(".fotorecetas");
 let recetasplus = " ";
@@ -37,6 +38,10 @@ fetch(URL)
     let ID = (data.id)
     let categorias = (data.tags) 
     console.log(categorias);
+    /*for (let i = 0; i < categorias.length; i++) {
+        let cats = categorias[i];
+        
+    } */
         
     recetasplus += `
     <article class="article" >
