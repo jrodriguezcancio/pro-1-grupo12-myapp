@@ -330,6 +330,11 @@ label {
                 /* RESPONSIVE - CELULAR */
 
 @media(max-width: 391px){
+body{
+    margin: 0px;
+    display: flex;
+}
+
 .header{
     display: flex;
     align-content: center;
