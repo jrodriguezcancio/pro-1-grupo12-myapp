@@ -1,11 +1,4 @@
-// (SIN TERMINAR)
-
-// FALTA:
-    // 1- Que la página muestre el término buscado. Ejemplo: 
-        // “Resultados de búsqueda para: término ingresado en el input.”
-
-    // 2- Para el caso de no haber resultados que coincidan con 
-        //el término buscado la página debe avisar al usuario que no hay coincidencias.
+// TERMINADO.
 
 let qs = location.search;
 console.log(qs);
@@ -16,9 +9,13 @@ console.log(buscado);
 
 let URL = `https://dummyjson.com/recipes/search?q=${buscado}`;
 let recetas = document.querySelector(".fotorecetas");
+let terminoBuscado = document.querySelector(".terminoBuscado");
 let resultados = " ";
+let termino = " ";
 
 if (buscado) {
+    termino += `Resultados de búsqueda para "${buscado}": `;
+    terminoBuscado.innerHTML = termino;
     if (buscado.length >= 3) {
         fetch(URL)
         .then(function(response) {
@@ -27,25 +24,27 @@ if (buscado) {
         .then(function(data) {
             console.log(data);
             let listaRECETAS = data.recipes;
+            if (listaRECETAS.length > 0) {
+                for (let i = 0; i < listaRECETAS.length; i++) {
+                    let nombre = listaRECETAS[i].name;
+                    let imagen = listaRECETAS[i].image;
+                    let id = listaRECETAS[i].id;
 
-            for (let i = 0; i < listaRECETAS.length; i++) {
-                let nombre = listaRECETAS[i].name;
-                let imagen = listaRECETAS[i].image;
-                let id = listaRECETAS[i].id;
+                    resultados += `
+                    <article class="article">
+                        <p class="titulo">${nombre}</p>
+                        <img src="${imagen}" alt="${nombre}" class="imagen">
+                        <a href="./receta.html?/id=${id}" class="masINFO"><p>More information about the recipe</p></a>
+                    </article>
+                    `;
+                
+                }
 
-                resultados += `
-                <article class="article">
-                    <p class="titulo">${nombre}</p>
-                    <img src="${imagen}" alt="${nombre}" class="imagen">
-                    <a href="./receta.html?/id=${id}" class="masINFO"><p>More information about the recipe</p></a>
-                </article>
-                `;
+                recetas.innerHTML = resultados;
+            } else {
+                recetas.innerHTML = "<h3>No se encontraron coincidencias para tu búsqueda.</h3>";
             }
-
-            
-            recetas.innerHTML = resultados;
-
-            // Asignamos eventos de mouseover y mouseout a los artículos
+            // detale mouseover y out
             let articles = document.querySelectorAll(".article");
             for (let i = 0; i < articles.length; i++) {
                 let article = articles[i];
@@ -63,9 +62,10 @@ if (buscado) {
             console.log("Error: " + error);
         });
     } else {
-        recetas.innerHTML = "<p>Por favor, busque algo con más de 3 caracteres.</p>";
+        termino += " Por favor, busque algo con más de 3 caracteres";
+        terminoBuscado.innerHTML = termino;
     }
 } else {
-    
-    recetas.innerHTML = "<p>Por favor, ingrese un término de búsqueda.</p>";
+    termino += "Por favor, ingrese un término de búsqueda";
+    terminoBuscado.innerHTML = termino;
 }

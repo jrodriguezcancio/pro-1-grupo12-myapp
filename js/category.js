@@ -1,8 +1,7 @@
-// (SN TERMINAR)
+// (SIN TERMINAR)
 
 // FALTA:
-    // 1- Poner un tiulo, h1, que diga el nombre de la caegoria seleccionada
-        // y abajo todas las recetas
+    // 1-  abajo todas las recetas
 
 // Extraemos los valores 
 let qs = location.search
@@ -13,8 +12,13 @@ const URL = `https://dummyjson.com/recipes/tag/${paramCategoria}` // Get recipe 
 let recetas = document.querySelector(".fotorecetas");
 let recetasplus = " ";
 
-let titulo = document.querySelectorAll("h1")
+let tit = " ";
 
+
+let titucat = document.querySelector(".titulocat");
+tit += `categoria seleccionada: "${paramCategoria}"`; 
+console.log(tit);
+titucat.innerText = tit;
 
 fetch(URL)
 .then(function(response) {
@@ -40,12 +44,11 @@ fetch(URL)
                     <p class= "nivel" >${dificultad} </p>
                     <a href="./receta.html?id=${id}" class="masINFO" ><p>More information about the recipe</p></a>
                 </article>
-            `        
+            `       
     }
-
     recetas.innerHTML = recetasplus;
     let articles = document.querySelectorAll(".article");
-    let img = document.querySelectorAll(".imagen")
+    let img = document.querySelectorAll(".imagen");
 
     // Asignamos eventos de mouseover y mouseout con un ciclo tradicional
     for (let i = 0; i < articles.length; i++) {

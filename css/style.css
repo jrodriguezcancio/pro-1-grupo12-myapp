@@ -126,6 +126,13 @@ button{
     
 }
 
+.terminoBuscado {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
                     /* RECETAS */
 
 .TODOfotorecetas{
@@ -298,6 +305,10 @@ label {
 
 
                     /* CATEGORY - HTML */
+.titulocat {
+    display: flex;
+    justify-content: center;
+}
 
 .categories{
     display: flex;
