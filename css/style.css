@@ -163,7 +163,7 @@ button{
 }
 
 
-.titulo {
+.titulo1 {
     color: black;
     font-size: 22px;
     margin: 20px 0px 5px;
@@ -344,6 +344,43 @@ label {
     color: red;
 }
 
+/* RECETA*/
+.artTEXTO{
+    display: flex;
+     flex-direction: column; 
+     align-items: center; 
+     margin-right: 10px; 
+     text-decoration: none;
+}
+.titulo{
+    color: red;
+    font-size: 30px;
+    margin: 20px 0px 5px;
+    font-weight: bold;
+}
+.coc{
+font-size: 20px;
+    height: 30px;
+    width: 320px;
+    display: flex
+;
+    background-color: rgb(255, 206, 128);
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+.instrucciones{
+    font-size: 20px;
+}
+
+.categorias{
+    text-Decoration: none
+    font-weight bold;
+    color: green;
+    
+}
+
+
 
                 /* RESPONSIVE - CELULAR */
 
@@ -424,5 +461,11 @@ h1 {
 }
 footer{
     text-align: center;
+}
+.article2{
+    width: 100%;
+}
+.artIMAGEN{
+    display: none;
 }
 }
