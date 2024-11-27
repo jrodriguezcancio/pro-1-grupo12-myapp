@@ -331,33 +331,26 @@ label {
 
 @media(max-width: 391px){
 body{
+    padding: 0px;
     margin: 0px;
-    display: flex;
+    display: block;
+    background-size: cover;
 }
 
 .header{
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    background-image: url(../img/background-img-paraMENU.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
+    text-align: center;
     flex-direction: column-reverse;
-    flex-wrap: nowrap;
+
 }
 .menu{
-    box-sizing: border-box;
-    display: flex;
+    align-items: center;
     flex-direction: column;
-    border: 1px solid black;
-    padding: 0px;
+
 }
 .logo{
         width: 180px;
         height: 180px;
-        border-radius: 130px;
-        margin: 20px 0px 20px 0px;
+
 }
 #emailID{
     width: 83%;
@@ -392,42 +385,26 @@ body{
     justify-content: center
 }
 .article img {
-    width: 100%;
-    border: 1px solid black;
-    margin: 20px 40px;
-    border-radius: 20px;
-    filter: drop-shadow(rgb(0, 0, 0) 2px 2px 4px);
+    width: 200px;
+    height: 200px;
 }
 .article {
-    border: 2px solid black;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    margin: 30px 30px 10px;
-    border-radius: 20px;
-    background-color: rgb(251, 251, 237);
-    padding: 5px;
-    width: 30%;
+    margin: 10px;
+    width: 100%;
 }
 h1 {
-    display: flex;
-    justify-content: center;
     font-size: 40px;
     margin: 40px 0px 15px 0px;
-    width: 90%;
-    text-align: center;
 }
 .formu {
-    width: 240px;
+    width: 100%;
     height: 40px;
 }
 .buscador {
-    display: flex;
-    border: 1px solid black;
-    background-color: white;
-    margin-top: 10px;
-    margin-bottom: 40px;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+}
+footer{
+    text-align: center;
 }
 }
