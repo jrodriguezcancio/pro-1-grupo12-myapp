@@ -10,8 +10,11 @@
 
 //Extraigo los valores buscados por el usuario
 let qs = location.search 
+console.log(qs);
+
 let qsObj = new URLSearchParams(qs);
 let buscado = qsObj.get("buscadorNAME");
+console.log(buscado);
 
 
 let URL = `https://dummyjson.com/recipes/search${qs}`;
