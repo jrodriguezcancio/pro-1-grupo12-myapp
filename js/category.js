@@ -8,15 +8,15 @@ let qs = location.search
 let qsObj = new URLSearchParams(qs);
 let paramCategoria = qsObj.get('tag');
 
+
 const URL = `https://dummyjson.com/recipes/tag/${paramCategoria}` // Get recipe by a tag
 let recetas = document.querySelector(".fotorecetas");
 let recetasplus = " ";
-
 let tit = " ";
 
 
 let titucat = document.querySelector(".titulocat");
-tit += `categoria seleccionada: "${paramCategoria}"`; 
+tit += `Categoria seleccionada: "${paramCategoria}"`; 
 console.log(tit);
 titucat.innerText = tit;
 
@@ -65,8 +65,6 @@ fetch(URL)
             article.style.border = "";
         });
     }
-    
-
 })
 
 .catch(function(error) {

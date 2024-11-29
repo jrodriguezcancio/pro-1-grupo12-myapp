@@ -1,3 +1,5 @@
+// (TERMINADO)
+
 let registro = document.querySelector(".registro");
 
 let error1= document.querySelector(".errorM");
@@ -5,10 +7,7 @@ let error2= document.querySelector(".errorC");
 
 registro.addEventListener("submit",function(e) {
 
-
     let isvalid = true;
-
-
     let email = (emailID.value)
 
     if(email === ""){

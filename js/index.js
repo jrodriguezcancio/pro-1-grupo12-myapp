@@ -25,7 +25,7 @@ function obtenerRecetas(skip){
 
             recetasplus += `
                 <article class="article" >
-                    <p class= "titulo1 ">${nombre} </p>
+                    <p class= "titulo ">${nombre} </p>
                     <img src="${imagen}" alt="${nombre}" class="imagen">
                     <p class= "nivel" >${dificultad} </p>
                     <a href="./receta.html?id=${id}"  class="masINFO" ><p>More information about the recipe</p></a>
@@ -41,7 +41,7 @@ function obtenerRecetas(skip){
         for (let i = 0; i < articles.length; i++) {
             let article = articles[i];
 
-            article1.addEventListener('mouseover', function () {
+            article.addEventListener('mouseover', function () {
                 article.style.backgroundColor = "rgb(200, 245, 230)";
                 article.style.border = "4px solid #57b4ad";
 

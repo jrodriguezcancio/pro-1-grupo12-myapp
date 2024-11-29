@@ -1,9 +1,11 @@
-// TERMINADO.
+// (TERMINADO)
 
 let qs = location.search;
 console.log(qs);
 
 let qsObj = new URLSearchParams(qs);
+console.log("qsObj:" +qsObj);
+
 let buscado = qsObj.get("buscadorNAME");  
 console.log(buscado);
 
@@ -19,8 +21,11 @@ if (buscado) {
     if (buscado.length >= 3) {
         fetch(URL)
         .then(function(response) {
+            console.log(response);
+            
             return response.json();
         })
+
         .then(function(data) {
             console.log(data);
             let listaRECETAS = data.recipes;
@@ -44,6 +49,7 @@ if (buscado) {
             } else {
                 recetas.innerHTML = "<h3>No se encontraron coincidencias para tu búsqueda.</h3>";
             }
+
             // detale mouseover y out
             let articles = document.querySelectorAll(".article");
             for (let i = 0; i < articles.length; i++) {
@@ -64,8 +70,10 @@ if (buscado) {
     } else {
         termino += " Por favor, busque algo con más de 3 caracteres";
         terminoBuscado.innerHTML = termino;
-    }
-} else {
+        }
+} 
+
+else {
     termino += "Por favor, ingrese un término de búsqueda";
     terminoBuscado.innerHTML = termino;
 }

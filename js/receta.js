@@ -7,14 +7,9 @@
 
 //Extraemos el valor del id de la receta seleccionada
 let qs = location.search; // con esto podemos extraer el id
-console.log(qs);
-
 let qsObj = new URLSearchParams(qs);
-
 let IDreceta = qsObj.get("id");
 console.log(IDreceta); 
-
-    
 
 // Hay que lograr extraer el ID de la receta utilizando esta URL
 // El problema es que al extrar por qs nos da "?/ + id "
@@ -38,10 +33,7 @@ fetch(URL)
     let ID = (data.id)
     let categorias = (data.tags) 
     console.log(categorias);
-    /*for (let i = 0; i < categorias.length; i++) {
-        let cats = categorias[i];
-        
-    } */
+    
         
     recetasplus += `
     <article class="article" >
@@ -49,15 +41,28 @@ fetch(URL)
             <img src="${imagen}" alt="${nombre}" class="imagen">
         </article>
         <article class="artTEXTO" >
-            <h1 class= "titulo ">${nombre} </h1>
+            <h1 class= "titulo1 ">${nombre} </h1>
             <p class= "instrucciones" >${instrucciones} </p>
             <p class= "coc" >Tiempo de cocción: ${tiempococ} minutos </p>
-            
-        </article>
-    </article>`
+            <article class="artCatg" >
+        `
 
-            receta.innerHTML = recetasplus;
-    
+    for (let t = 0; t < categorias.length; t++) {
+        let categoria = categorias[t];        
+
+        recetasplus +=`            
+            <a class="categoriasClase" href="./category.html?tag=${categoria}" >${categoria}</a>
+        `
+        receta.innerHTML = recetasplus;
+    } 
+
+    recetasplus += 
+                    `</article>
+                </article> 
+            </article>` 
+
+    receta.innerHTML = recetasplus;
+
 
     let artRECETAS = document.querySelectorAll(".fotorecetas")
     let articulos = document.querySelectorAll(".article")
@@ -65,13 +70,15 @@ fetch(URL)
     let artTEXTO = document.querySelectorAll(".artTEXTO")
     let imagenes = document.querySelectorAll(".imagen");
     let textos = document.querySelectorAll ("p")
-    let titulos = document.querySelectorAll(".titulo")
+    let titulos = document.querySelectorAll(".titulo1")
     let cocción = document.querySelectorAll(".coc")
-    let categ = document.querySelectorAll(".categorias")
+    let categ = document.querySelectorAll(".categoriasClase")
+    let articuloCategoria = document.querySelectorAll(".artCatg")
+
 
         // ARTICULO FOTORECETA
-        for (let dd = 0; dd < artRECETAS.length; dd++) {
-            const receta = artRECETAS[dd];
+        for (let d = 0; d < artRECETAS.length; d++) {
+            const receta = artRECETAS[d];
             receta.style.display = "flex"
             receta.style.justifyContent = "center"
             receta.style.alignItems = "center"
@@ -79,8 +86,8 @@ fetch(URL)
         }
         
         // ARTÍCULO
-        for (let iii = 0; iii < articulos.length; iii++) {
-            const articulo = articulos[iii];
+        for (let i = 0; i < articulos.length; i++) {
+            const articulo = articulos[i];
             articulo.style.border = "2px solid black";
             articulo.style.margin = ""
             articulo.style.display = "flex"
@@ -110,12 +117,18 @@ fetch(URL)
             tex.style.textDecoration = "none"
         }
     
+        for (let c = 0; c < articuloCategoria.length; c++) {
+            const categoriesArt = articuloCategoria[c];
+            categoriesArt.style.display = "flex"
+        }
+
         // CATEGORIAS
         for (let f = 0; f < categ.length; f++) {
             const categoria = categ[f];
             categoria.style.textDecoration = "none"
             categoria.style.fontWeight = "bold"
             categoria.style.color = "green"
+            categoria.style.margin = "0px 5px 0px 5px"
             
         }
     

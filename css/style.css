@@ -9,7 +9,7 @@ body {
     
 }
 
-                    /* TODO */
+                    /* TODO - clase que agarra todo el contenido del body */
 .TODO{
     background-image: url(../img/backgroundIMAGEb.jpeg);
     background-repeat: no-repeat;
@@ -17,7 +17,7 @@ body {
     background-size: cover;
 } 
 
-        /* HEADER QUE ABARCA:LOGO - MENU - BUSCADOR DE RECETAS */
+                    /* HEADER QUE ABARCA:LOGO - MENU - BUSCADOR DE RECETAS */
 
 .header {
     display: flex;
@@ -68,34 +68,7 @@ body {
     font-weight: bold;
 }
 
-/* TÍTULO PRINCIPAL */
-
-h1 {
-    display: flex;
-    justify-content: center;
-    font-size: 40px;
-    margin: 40px 0px 15px 0px;
-}
-
-
-                /* FOOTER - INTEGRANTES DEL GRUPO */
-
-footer {
-    display: flex;
-    justify-content: center;
-}
-
-footer p{
-    background-color: #ff6767;
-    padding: 15px 200px 15px 200px;
-    border-radius: 50px 50px 0px 0px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #ffffff;
-}
-
-
-                /* BUSCADOR DE RECETAS */
+/* BUSCADOR DE RECETAS */
 
 button{
     color: white;
@@ -133,7 +106,36 @@ button{
     flex-wrap: wrap;
 }
 
-                    /* RECETAS */
+/* Titulo Principal - Index.html */
+
+h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    margin: 40px 0px 15px 0px;
+}
+
+
+                        /* FOOTER - INTEGRANTES DEL GRUPO */
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+footer p{
+    background-color: #ff6767;
+    padding: 15px 200px 15px 200px;
+    border-radius: 50px 50px 0px 0px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+
+                
+
+                        /* RECETAS - Index.Html */
 
 .TODOfotorecetas{
     display: flex;
@@ -150,7 +152,6 @@ button{
     margin: 0px;
 }
 
-
 .article {
     border: 2px solid black;
     display: flex;
@@ -163,7 +164,7 @@ button{
 }
 
 
-.titulo1 {
+.titulo {
     color: black;
     font-size: 22px;
     margin: 20px 0px 5px;
@@ -203,7 +204,7 @@ button{
 
 
 
-/* Botón CARGAR MÁS */
+/* Botón CARGAR MÁS -- que se enceuntra al final de las recetas en Index.HTML*/
 
 .cargar{
     height: 40px;
@@ -215,7 +216,7 @@ button{
 }   
 
 
-                    /* REGISTER - HTML */
+                        /* REGISTER - HTML */
 
 .mucho{
     display: flex;
@@ -258,7 +259,7 @@ label {
     padding: 11px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin-bottom: 30px;
+    margin-bottom: 5px;
 }
 
 .link {
@@ -276,8 +277,19 @@ label {
     margin: 20px;
 }
 
+.errorM{
+    display: none;
+    color: red;
+    margin: 0px;
+}
+.errorC{
+    display:none;
+    color: red;
+    margin-bottom: 15px;
+}
 
-                    /* LOGIN - HTML*/ 
+
+                        /* LOGIN - HTML*/ 
 
 .login{
     display: flex;
@@ -296,7 +308,7 @@ label {
     width: 600px;
     justify-content: center;
     align-items: center;
-    padding: 0px;
+    padding-top: 25px;
     border-radius: 10px;
     box-shadow: 50px 50px 50px 50px rgba(0, 0, 0, 0.2);
     text-align: center;
@@ -304,11 +316,7 @@ label {
 }
 
 
-                    /* CATEGORY - HTML */
-.titulocat {
-    display: flex;
-    justify-content: center;
-}
+                        /*   CATEGORIES.HTML   */
 
 .categories{
     display: flex;
@@ -335,31 +343,30 @@ label {
     color: black;
 }
 
-.errorM{
-    display: none;
-    color: red;
-}
-.errorC{
-    display:none;
-    color: red;
+                    /*   Category.html ---- Titulo y recetas  */
+
+.titulocat {
+    display: flex;
+    justify-content: center;
 }
 
-/* RECETA*/
-.artTEXTO{
+
+                    /* Receta.html ---- Detalle de la receta seleccionada */
+/* .artTEXTO{
     display: flex;
      flex-direction: column; 
      align-items: center; 
      margin-right: 10px; 
      text-decoration: none;
 }
-.titulo{
+.titulo1{
     color: red;
     font-size: 30px;
     margin: 20px 0px 5px;
     font-weight: bold;
 }
 .coc{
-font-size: 20px;
+    font-size: 20px;
     height: 30px;
     width: 320px;
     display: flex
@@ -374,15 +381,14 @@ font-size: 20px;
 }
 
 .categorias{
-    text-Decoration: none
-    font-weight bold;
+    text-Decoration: none;
+    font-weight: bold;
     color: green;
     
-}
+}*/
 
 
-
-                /* RESPONSIVE - CELULAR */
+                        /* RESPONSIVE - CELULAR */
 
 @media(max-width: 391px){
 body{
