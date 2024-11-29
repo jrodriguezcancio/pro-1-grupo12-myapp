@@ -352,7 +352,28 @@ label {
 
 
                     /* Receta.html ---- Detalle de la receta seleccionada */
-/* .artTEXTO{
+
+.articleRECETA{
+    border: 2px solid black;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    margin: 30px 40px 10px;
+    border-radius: 20px;
+    background-color: rgb(251, 251, 237);
+    width: 950px;
+}
+
+.imagenR{
+    width: 300px;
+    border: 1px solid black;
+    height: 280px;
+    margin: 40px;
+    border-radius: 20px;
+    filter: drop-shadow(rgb(0, 0, 0) 2px 2px 4px);
+}
+
+.artTEXTOr{
     display: flex;
      flex-direction: column; 
      align-items: center; 
@@ -369,8 +390,7 @@ label {
     font-size: 20px;
     height: 30px;
     width: 320px;
-    display: flex
-;
+    display: flex;
     background-color: rgb(255, 206, 128);
     align-items: center;
     justify-content: center;
@@ -380,12 +400,16 @@ label {
     font-size: 20px;
 }
 
-.categorias{
-    text-Decoration: none;
+.artCatg{
+    display: flex;
+}
+
+.categoriasClase{
+    text-decoration: none;
     font-weight: bold;
     color: green;
-    
-}*/
+    margin: 0px 5px;
+}
 
 
                         /* RESPONSIVE - CELULAR */

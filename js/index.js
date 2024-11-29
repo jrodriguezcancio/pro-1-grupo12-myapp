@@ -60,6 +60,9 @@ function obtenerRecetas(skip){
         }
 
     })
+    .catch(function(error) {
+        console.log("Error: " + error);
+    });
 }
 
 obtenerRecetas(skip)

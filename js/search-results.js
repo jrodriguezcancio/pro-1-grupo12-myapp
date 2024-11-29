@@ -1,5 +1,7 @@
 // (TERMINADO)
 
+// Buscador 
+
 let qs = location.search;
 console.log(qs);
 
@@ -9,7 +11,7 @@ console.log("qsObj:" +qsObj);
 let buscado = qsObj.get("buscadorNAME");  
 console.log(buscado);
 
-let URL = `https://dummyjson.com/recipes/search?q=${buscado}`;
+let URL = `https://dummyjson.com/recipes/search?q=${buscado}`; // URL search recipes
 let recetas = document.querySelector(".fotorecetas");
 let terminoBuscado = document.querySelector(".terminoBuscado");
 let resultados = " ";
@@ -37,7 +39,7 @@ if (buscado) {
 
                     resultados += `
                     <article class="article">
-                        <p class="titulo1">${nombre}</p>
+                        <p class="titulo">${nombre}</p>
                         <img src="${imagen}" alt="${nombre}" class="imagen">
                         <a href="./receta.html?id=${id}" class="masINFO"><p>More information about the recipe</p></a>
                     </article>
@@ -57,10 +59,12 @@ if (buscado) {
 
                 article.addEventListener('mouseover', function () {
                     article.style.backgroundColor = "rgb(200, 245, 230)";
+                    article.style.border = "4px solid #57b4ad";
                 });
 
                 article.addEventListener('mouseout', function () {
                     article.style.backgroundColor = "";  // Vuelve al color original
+                    article.style.border = "";
                 });
             }
         })
