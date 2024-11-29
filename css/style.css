@@ -288,6 +288,12 @@ label {
     margin-bottom: 15px;
 }
 
+.errorCheck {
+    display: none;
+    color:red;
+    margin-bottom: 10px;
+}
+
 
                         /* LOGIN - HTML*/ 
 
