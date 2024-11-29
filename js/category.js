@@ -20,6 +20,24 @@ tit += `Categoria seleccionada: "${paramCategoria}"`;
 console.log(tit);
 titucat.innerText = tit;
 
+//probando subit para el buscador (FUNCIONA)
+let formularioBusqueda = document.querySelector(".buscador");
+let buscador = document.querySelector(".formu");
+
+formularioBusqueda.addEventListener("submit", function(event) {
+    let buscado = buscador.value;
+    
+    if (buscado.length > 0 && buscado.length < 3){
+        alert("Busque algo de mínimo 3 caracteres");
+        event.preventDefault(); // Evita que el formulario se envíe
+    } else if (buscado === ""){
+        alert("No deje el campo vacío");
+        event.preventDefault(); // Evita que el formulario se envíe
+    }
+});
+
+
+
 fetch(URL)
 .then(function(response) {
     return response.json();
@@ -57,7 +75,7 @@ fetch(URL)
 
         article.addEventListener('mouseover', function () {
             article.style.backgroundColor = "rgb(200, 245, 230)";
-            article.style.border = "4px solid #57b4ad";
+            article.style.border = "2px solid #57b4ad";
         });
 
         article.addEventListener('mouseout', function () {

@@ -13,6 +13,24 @@ let URL = `https://dummyjson.com/recipes/${IDreceta}`; // URL Get a single recip
 let receta = document.querySelector(".fotorecetas");
 let recetasplus = " ";
 
+
+//probando subit para el buscador (FUNCIONA)
+let formularioBusqueda = document.querySelector(".buscador");
+let buscador = document.querySelector(".formu");
+
+formularioBusqueda.addEventListener("submit", function(event) {
+    let buscado = buscador.value;
+    
+    if (buscado.length > 0 && buscado.length < 3){
+        alert("Busque algo de mínimo 3 caracteres");
+        event.preventDefault(); // Evita que el formulario se envíe
+    } else if (buscado === ""){
+        alert("No deje el campo vacío");
+        event.preventDefault(); // Evita que el formulario se envíe
+    }
+});
+
+
 fetch(URL)
 .then(function(response) {
     return response.json();

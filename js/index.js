@@ -5,8 +5,25 @@ let cargarMas = document.querySelector(".cargar");
 let URL = "https://dummyjson.com/recipes?limit=10&skip="; // URL limit and skip recipes
 let recetasplus = " ";
 let skip = 0;
-
 // El skip en 0 sirve para que la URL no se saltee las primeras 10 recetas
+
+
+//probando subit para el buscador (FUNCIONA)
+let formularioBusqueda = document.querySelector(".buscador");
+let buscador = document.querySelector(".formu");
+
+formularioBusqueda.addEventListener("submit", function(event) {
+    let buscado = buscador.value;
+    
+    if (buscado.length > 0 && buscado.length < 3){
+        alert("Busque algo de mínimo 3 caracteres");
+        event.preventDefault(); // Evita que el formulario se envíe
+    } else if (buscado === ""){
+        alert("No deje el campo vacío");
+        event.preventDefault(); // Evita que el formulario se envíe
+    }
+});
+
 
 function obtenerRecetas(skip){
     fetch(URL + skip)
@@ -43,8 +60,7 @@ function obtenerRecetas(skip){
 
             article.addEventListener('mouseover', function () {
                 article.style.backgroundColor = "rgb(200, 245, 230)";
-                article.style.border = "4px solid #57b4ad";
-
+                article.style.border = "2px solid #57b4ad";
             });
 
             article.addEventListener('mouseout', function () {

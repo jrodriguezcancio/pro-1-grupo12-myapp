@@ -14,8 +14,25 @@ console.log(buscado);
 let URL = `https://dummyjson.com/recipes/search?q=${buscado}`; // URL search recipes
 let recetas = document.querySelector(".fotorecetas");
 let terminoBuscado = document.querySelector(".terminoBuscado");
+let buscador = document.querySelector(".buscador")
 let resultados = " ";
 let termino = " ";
+
+//probando subit para el buscador (FUNCIONA)
+let formularioBusqueda = document.querySelector(".buscador");
+let formu = document.querySelector(".formu");
+
+formularioBusqueda.addEventListener("submit", function(event) {
+    let buscado = formu.value;
+    
+    if (buscado.length > 0 && buscado.length < 3){
+        alert("Busque algo de mínimo 3 caracteres");
+        event.preventDefault(); // Evita que el formulario se envíe
+    } else if (buscado === ""){
+        alert("No deje el campo vacío");
+        event.preventDefault(); // Evita que el formulario se envíe
+    }
+});
 
 if (buscado) {
     termino += `Resultados de búsqueda para "${buscado}": `;
@@ -49,7 +66,7 @@ if (buscado) {
 
                 recetas.innerHTML = resultados;
             } else {
-                recetas.innerHTML = "<h3>No se encontraron coincidencias para tu búsqueda.</h3>";
+               alert("No se encontraron coincidencias para tu búsqueda.")
             }
 
             // detale mouseover y out
@@ -59,7 +76,7 @@ if (buscado) {
 
                 article.addEventListener('mouseover', function () {
                     article.style.backgroundColor = "rgb(200, 245, 230)";
-                    article.style.border = "4px solid #57b4ad";
+                    article.style.border = "2px solid #57b4ad";
                 });
 
                 article.addEventListener('mouseout', function () {
@@ -78,6 +95,11 @@ if (buscado) {
 } 
 
 else {
-    termino += "Por favor, ingrese un término de búsqueda";
-    terminoBuscado.innerHTML = termino;
+    buscador.addEventListener('submit', function(e) {
+        //let busc = (buscadorID.value)
+    
+        if(buscado === "") {
+            alert("Por favor, ingrese un término de búsqueda");
+                e.preventDefault(); }
+    })
 }

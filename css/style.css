@@ -469,6 +469,16 @@ body{
     align-items: center;
     justify-content: center
 }
+
+.titulocat{
+    font-size: 25px;
+
+}
+
+.articleRECETA{
+    display: flex;
+    flex-wrap: wrap;
+}
 .article img {
     width: 200px;
     height: 200px;
@@ -477,6 +487,11 @@ body{
     margin: 10px;
     width: 100%;
 }
+
+.instrucciones{
+    margin: 8px 10px 9px 30px;
+}
+
 h1 {
     font-size: 40px;
     margin: 40px 0px 15px 0px;
@@ -492,6 +507,12 @@ h1 {
 footer{
     text-align: center;
 }
+
+footer p{
+    padding: 10px 50px;
+    font-size: 14px;
+}
+
 .article2{
     width: 100%;
 }

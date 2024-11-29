@@ -7,6 +7,23 @@ const URL = 'https://dummyjson.com/recipes/tags' // Get all recipes tags
 let categoriaPlus = " ";
 
 
+//probando subit para el buscador (FUNCIONA)
+let formularioBusqueda = document.querySelector(".buscador");
+let buscador = document.querySelector(".formu");
+
+formularioBusqueda.addEventListener("submit", function(event) {
+    let buscado = buscador.value;
+    
+    if (buscado.length > 0 && buscado.length < 3){
+        alert("Busque algo de mínimo 3 caracteres");
+        event.preventDefault(); // Evita que el formulario se envíe
+    } else if (buscado === ""){
+        alert("No deje el campo vacío");
+        event.preventDefault(); // Evita que el formulario se envíe
+    }
+});
+
+
 fetch(URL)
 .then(function(response) {
     return response.json();
